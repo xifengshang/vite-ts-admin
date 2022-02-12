@@ -1,8 +1,9 @@
 import { InjectionKey } from 'vue'
-import { createStore, Store } from 'vuex'
+import { createStore, useStore as baseUseStore, Store } from 'vuex'
 
 export interface State {
-  count: number
+  count: number,
+  isCollapse: boolean
 }
 
 // 定义 injection key
@@ -10,6 +11,17 @@ export const key: InjectionKey<Store<State>> = Symbol()
 
 export const store = createStore<State>({
   state: {
-    count: 0
+    count: 0,
+    isCollapse: false
+  },
+  mutations: {
+    updateStatus(state: State, val: boolean) {
+      state.isCollapse = val
+    }
   }
 })
+
+// 定义自己的 `useStore` 组合式函数
+export function useStore () {
+  return baseUseStore(key)
+}
