@@ -22,6 +22,7 @@ const routes:Array<RouteRecordRaw> = [
     path: '/user',
     component: Layout,
     name: 'user',
+    redirect: '/user/index',
     meta: {
       title: '用户管理',
       icon: 'HomeFilled'
