@@ -6,7 +6,7 @@
   <div style="width: 600px;">
     <el-breadcrumb separator="/">
       <!-- <el-breadcrumb-item :to="{ path: '/' }">homepage</el-breadcrumb-item> -->
-      <el-breadcrumb-item v-for="item in tabs" :to="{ path: item.path }">{{ item.meta.title }}</el-breadcrumb-item>
+      <el-breadcrumb-item v-for="item in routeBreadcrumb" :to="{ path: item.path }">{{ item.meta.title }}</el-breadcrumb-item>
     </el-breadcrumb>
   </div>
 </template>
@@ -22,8 +22,10 @@
     store.commit('updateStatus', !store.state.isCollapse)
   }
 
-  const tabs: Ref<RouteLocationMatched[]> = ref([])
+  const routeBreadcrumb: Ref<RouteLocationMatched[]> = ref([])
 
+  
+  
   watch(() => route.path, path => {
     getBreadcrumb()
   })
@@ -37,10 +39,11 @@
 
     console.log('----->', matched);
     
-    tabs.value = matched
+    routeBreadcrumb.value = matched
   }
 
   getBreadcrumb()
+  
 </script>
 <style lang="scss">
   
