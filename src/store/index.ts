@@ -15,7 +15,9 @@ export const store = createStore<State>({
   state: {
     count: 0,
     isCollapse: false,
-    tabList: []
+    tabList: [
+      // {path: '/home', title: '首页'}
+    ]
   },
   mutations: {
     updateStatus(state: State, val: boolean) {
@@ -24,6 +26,13 @@ export const store = createStore<State>({
     addTab(state: State, tab: ITab) {
       if (state.tabList.some(item => item.path === tab.path)) return
       state.tabList.push(tab)
+    },
+    removeTab(state: State, tabName: string) {
+      state.tabList.map((item, index) => {
+        if (tabName == item.path) {
+          state.tabList.splice(index, 1)
+        }
+      })
     }
   },
   getters: {

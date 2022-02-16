@@ -27,6 +27,7 @@
   
   
   watch(() => route.path, path => {
+    console.log(path)
     getBreadcrumb()
   })
   const getBreadcrumb = () => {

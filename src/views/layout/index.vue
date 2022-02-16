@@ -8,7 +8,7 @@
         <Header />
       </el-header>
       <el-main>
-        <div>
+        <div class="tab-nav">
           <Tabs />
         </div>
         <router-view />
@@ -31,5 +31,9 @@
   }
   .aside {
     background-color: #545c64;
+  }
+  .tab-nav {
+    border: 1px solid #f5f5f6;
+    padding: 8px;
   }
 </style>
