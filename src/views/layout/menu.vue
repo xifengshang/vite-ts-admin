@@ -1,7 +1,7 @@
 <template>
   <div class="menu-box">
     <el-menu
-      active-text-color="#ffd04b"
+      active-text-color="#409eff"
       background-color="#545c64"
       class="el-menu-vertical-demo"
       :default-active="activeIndex"
@@ -43,7 +43,7 @@
       component: "Layout",
       meta: {
         title: '用户',
-        icon: "HomeFilled",
+        icon: "Histogram",
         parentId: 0
       },
       children: [
@@ -52,7 +52,7 @@
           component: "/user/index",
           meta: {
             title: '用户管理-1',
-            icon: "HomeFilled",
+            icon: "Management",
             parentId: 12
           },
         },
@@ -61,7 +61,7 @@
           component: "/user/manager",
           meta: {
             title: '用户管理-2',
-            icon: "HomeFilled",
+            icon: "Message",
             parentId: 13
           },
         }
@@ -83,5 +83,6 @@
   .el-menu-vertical-demo:not(.el-menu--collapse) {
     width: 220px;
     min-height: 400px;
+    border: none;
   }
 </style>

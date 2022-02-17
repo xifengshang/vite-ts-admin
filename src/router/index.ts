@@ -25,7 +25,7 @@ const routes:Array<RouteRecordRaw> = [
     redirect: '/user/index',
     meta: {
       title: '用户管理',
-      icon: 'HomeFilled'
+      icon: 'Histogram'
     },
     children: [
       {
@@ -34,7 +34,7 @@ const routes:Array<RouteRecordRaw> = [
         name: 'userIndex',
         meta: {
           title: '用户管理-1',
-          icon: 'HomeFilled'
+          icon: 'Management'
         }
       },
       {
@@ -43,7 +43,7 @@ const routes:Array<RouteRecordRaw> = [
         name: 'userManager',
         meta: {
           title: '用户管理-2',
-          icon: 'HomeFilled'
+          icon: 'Message'
         }
       }
     ]

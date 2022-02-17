@@ -1,9 +1,11 @@
 <template>
-  <div>
-    <span @click="change">header</span>
+  <div class="expand-wrap">
+    <span class="expand" @click="change">
+      <el-icon :size="24" color="#999"><expand /></el-icon>
+    </span>
   </div>
   <!-- 面包屑 -->
-  <div style="width: 600px;">
+  <div style="width: 600px;padding-top: 10px;">
     <el-breadcrumb separator="/">
       <!-- <el-breadcrumb-item :to="{ path: '/' }">homepage</el-breadcrumb-item> -->
       <el-breadcrumb-item v-for="item in routeBreadcrumb" :to="{ path: item.path }">{{ item.meta.title }}</el-breadcrumb-item>
@@ -47,5 +49,10 @@
   
 </script>
 <style lang="scss">
-  
+  .expand-wrap {
+    padding-top: 12px;
+    .expand {
+      cursor: pointer;
+    }
+  }
 </style>
