@@ -11,7 +11,9 @@
         <div class="tab-nav">
           <Tabs />
         </div>
-        <router-view />
+        <div class="main-content">
+          <router-view />
+        </div>
       </el-main>
     </el-container>
   </el-container>
@@ -35,5 +37,8 @@
   .tab-nav {
     border: 1px solid #f5f5f6;
     padding: 8px;
+  }
+  .main-content {
+    padding: 30px 0;
   }
 </style>
